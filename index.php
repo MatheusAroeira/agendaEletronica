@@ -1,5 +1,6 @@
 <?php
-    include 'conexao.php';
+//tela inicial de login
+    include 'conexao_usuarios.php';
 
     if(isset($_POST['email']) && isset($_POST['senha'])){
 
@@ -63,8 +64,16 @@
         <p>
             <button type="submit">Entrar</button>
         </p>
-
     </form>
+
+    <button class = "registerbutton" type = "button">Registre-se</button>
 
 </body>
 </html>
+
+<script>
+    var button = document.querySelector('.registerbutton');
+    button.addEventListener('click', function(){
+        location.href = 'cadastro.php';  // Logout.php é a página que fecha a sessão do usuário
+    })
+</script>

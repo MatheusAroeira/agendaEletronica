@@ -1,4 +1,5 @@
 <?php
+//protege o calendario para que so possar ser acessado apos o login ter sido feito
 if(!isset($_SESSION)){ 
     session_start();
 }

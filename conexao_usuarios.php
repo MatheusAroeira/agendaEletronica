@@ -1,5 +1,5 @@
 <?php
-
+//faz a conexao com a database
 $usuario = 'root';
 $senha = '1004';
 $database = 'usuarios';

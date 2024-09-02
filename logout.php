@@ -1,5 +1,5 @@
 <?php
-
+//finaliza a sessao
     if(!isset($_SESSION)){ 
         session_start();
     }
