@@ -14,6 +14,7 @@ if(isset($_POST['email']) && isset($_POST['senha']) && isset($_POST['nome'])) {
         $nome = $mysqli->real_escape_string($_POST['nome']);
         $email = $mysqli->real_escape_string($_POST['email']);
         $senha = $mysqli->real_escape_string($_POST['senha']);
+        $id = uniqid();
 
         $sql_email = "SELECT * FROM usuarios WHERE email = '$email'";
         $sql_query = $mysqli ->query($sql_email) or die("Falha na execucao do codigo SQL: " . $mysqli -> error);
@@ -21,10 +22,10 @@ if(isset($_POST['email']) && isset($_POST['senha']) && isset($_POST['nome'])) {
         $quantidadeLinhas = $sql_query ->num_rows;
 
         if($quantidadeLinhas == 0) {
-            $criaagenda = "CREATE TABLE `$nome` (`ID` INT NOT NULL AUTO_INCREMENT , `title` VARCHAR(220) NOT NULL , `color` VARCHAR(45) NOT NULL , `start` DATE NOT NULL , `end` DATE NOT NULL , PRIMARY KEY (`ID`)) ENGINE = InnoDB";
+            $criaagenda = "CREATE TABLE `$id` (`id` VARCHAR(220) NOT NULL , `title` VARCHAR(220) NOT NULL , `color` VARCHAR(45) NOT NULL , `start` DATE NOT NULL , `end` DATE NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB";
             $mysql -> query($criaagenda) or die("Falha na execucao do codigo SQL: ". $mysql -> error);
 
-            $registrausuario = "INSERT INTO usuarios (nome, email, senha) VALUES ('$nome', '$email', '$senha')";
+            $registrausuario = "INSERT INTO usuarios (id,nome, email, senha) VALUES ('$id','$nome', '$email', '$senha')";
             $mysqli -> query($registrausuario) or die("Falha na execucao do codigo SQL: ". $mysqli -> error);
 
             header("Location: index.php");
@@ -43,30 +44,31 @@ if(isset($_POST['email']) && isset($_POST['senha']) && isset($_POST['nome'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Register</title>
 </head>
 <body>
-
-    <form action="" method = "post">
-        <p>
+    <div class = "tela">
+        <form action="" method = "post">
             <label>Nome</label>
             <input type="text" name="nome">
-            
-        </p>
+            <br><br>
 
-        <p>
             <label>E-mail</label>
             <input type="email" name="email">
-            
-        </p>
-
-        <p>
+            <br><br>
+       
             <label>Senha</label>
             <input type="password" name="senha">
-        </p>
+       
 
-        <button class = 'registerbutton' type="submit">Registre-se</button>
-    </form>
+            <button class = 'button' type="submit">Registre-se</button>
+            <a href="index.php">Voltar</a>
+        </form>
+    </div>
+    
+       
+    
     
 </body>
 </html>

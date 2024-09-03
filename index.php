@@ -44,35 +44,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Login</title>
+
 </head>
 <body>
-    <h1>Acesse seu calendario pessoal</h1>
-    <form action="" method="POST">
-        <p>
-
+    <div class="tela">
+        <h1>Login</h1>
+        <form action="" method="POST">
+            
             <label>Email</label>
-            <input type="text" name ="email">
-
-        </p>
-        <p>
-
-            <label>Senha</label>
-            <input type="password" name ="senha">
-
-        </p>
-        <p>
-            <button type="submit">Entrar</button>
-        </p>
-    </form>
-
-    <button class = "registerbutton" type = "button">Registre-se</button>
-
+                <input type="email" name ="email">
+                <br><br>
+        
+                <label>Senha</label>
+                <input type="password" name ="senha">
+                <br><br>
+            
+                <button class = "button" type="submit">Entrar</button>
+                <br><br>
+                <button id= "register_button" class = "button" type = "button">Registre-se</button>
+            
+        </form>
+    </div>
 </body>
 </html>
 
 <script>
-    var button = document.querySelector('.registerbutton');
+    var button = document.querySelector('#register_button');
     button.addEventListener('click', function(){
         location.href = 'cadastro.php';  // Logout.php é a página que fecha a sessão do usuário
     })

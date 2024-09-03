@@ -1,0 +1,97 @@
+@font-face {
+  font-family:kenarose;
+  src: url('Kenarose.ttf') format('truetype'), url('Kenarose.otf') format('opentype');
+}
+
+@font-face {
+  font-family:engplot;
+  src: url('Engplot.TTF') format('truetype');
+}
+
+body {
+  margin: 40px 10px;
+  padding: 0;
+  background-image: linear-gradient(100deg, cyan, yellow);
+}
+
+.tela {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 70px;
+  border-radius: 30px;
+  color: white;
+  font-family:'kenarose','Courier New', Courier, monospace;
+}
+
+a{
+  color: white;
+  text-decoration: none;
+}
+a:hover{
+  size: 12px;
+  text-decoration: underline;
+}
+
+
+input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+}
+
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
+  font-weight: 700;
+}
+.button:hover{
+  background-color: #3b7a0d;
+  transform: scale3d(1.05,1.05,1.05)
+}
+
+
+
+#calendar {
+  background-color: rgba(0, 0, 0, 0.3);
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 50px;
+  border-radius: 30px;
+  font-size: large;
+  font-family:'Courier New', Courier, monospace;
+  color: white;
+}
+
+.topper {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  color: white;
+  font-family:'kenarose','Courier New', Courier, monospace;
+  font-size: 35px;
+  margin-left: 5px;
+  padding: 20px;
+  text-align: center;
+}
+
+#painel-mensagem {
+  text-align: center;
+  margin-left: 5px;
+  padding: 20px;
+  color: white;
+  font-size: 50px;
+  font-family:'kenarose','Courier New', Courier, monospace;
+}
